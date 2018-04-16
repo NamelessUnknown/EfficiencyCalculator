@@ -34,14 +34,14 @@ namespace EfficiencyCalc.Controllers
         }
 
         [HttpGet("[action]")]
-        public IActionResult GetPageCounts()
+        public IActionResult GetManyPageCounts()
         {
-            return new JsonResult(_pageCountRepo.GetPageCounts());
+            return new JsonResult(_pageCountRepo.GetManyPageCounts());
         }
 
 
         [HttpGet("[action]")]
-        public IActionResult GetProperty(int pageCountId)
+        public IActionResult GetPageCount(int pageCountId)
         {
             if (pageCountId <= 0)
             {

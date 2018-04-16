@@ -42,7 +42,7 @@ namespace EfficiencyCalc.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("PageCounts");
+                    b.ToTable("PageCount");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>

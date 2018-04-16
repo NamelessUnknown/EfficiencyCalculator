@@ -22,13 +22,13 @@ namespace EfficiencyCalc.Models.Repository
             {
                 throw new Exception("Page count cannot be null");
             }
-            _databaseContext.PageCounts.Add(pageCount);
+            _databaseContext.PageCount.Add(pageCount);
             _databaseContext.SaveChanges();
             return pageCount.Id;
         }
-        public List<PageCount> GetPageCounts()
+        public List<PageCount> GetManyPageCounts()
         {
-            return _databaseContext.PageCounts.ToList();
+            return _databaseContext.PageCount.ToList();
         }
 
         public PageCount GetPageCount(int pageCountId)
@@ -38,7 +38,7 @@ namespace EfficiencyCalc.Models.Repository
                 throw new Exception("Page Count ID cannot be less or equal to 0");
             }
 
-            return _databaseContext.PageCounts.Where(pageCount => pageCount.Id == pageCountId).FirstOrDefault();
+            return _databaseContext.PageCount.Where(pageCount => pageCount.Id == pageCountId).FirstOrDefault();
         }
 
         public int UpdatePageCount(PageCount pageCount)
@@ -48,7 +48,7 @@ namespace EfficiencyCalc.Models.Repository
                 throw new Exception("Page count cannot be null");
             }
 
-            _databaseContext.PageCounts.Update(pageCount);
+            _databaseContext.PageCount.Update(pageCount);
             _databaseContext.SaveChanges();
             return pageCount.Id;
         }
@@ -60,7 +60,7 @@ namespace EfficiencyCalc.Models.Repository
                 throw new Exception("Page count cannot be null");
             }
 
-            _databaseContext.PageCounts.Remove(pageCount);
+            _databaseContext.PageCount.Remove(pageCount);
             _databaseContext.SaveChanges();
 
         }

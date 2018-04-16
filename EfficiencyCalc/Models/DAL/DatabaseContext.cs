@@ -12,6 +12,6 @@ namespace EfficiencyCalc.DAL
     {
         public DatabaseContext (DbContextOptions<DatabaseContext> options) : base (options) { }
 
-        public DbSet<PageCount> PageCounts { get; set; }
+        public DbSet<PageCount> PageCount { get; set; }
     }
 }
