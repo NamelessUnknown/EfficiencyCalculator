@@ -7,6 +7,7 @@ namespace EfficiencyCalc.Models
 {
     public class PageCount
     {
+        public int Id { get; set; }
         public string worker { get; set; }
         public int inspectedPages { get; set; }
         public int associations { get; set; }

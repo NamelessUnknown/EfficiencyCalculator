@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+﻿using EfficiencyCalc.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -10,5 +11,7 @@ namespace EfficiencyCalc.DAL
     public class DatabaseContext : IdentityDbContext
     {
         public DatabaseContext (DbContextOptions<DatabaseContext> options) : base (options) { }
+
+        public DbSet<PageCount> PageCounts { get; set; }
     }
 }
