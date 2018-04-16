@@ -7,13 +7,13 @@ using System.Threading.Tasks;
 
 namespace EfficiencyCalc.Models.Repository
 {
-    public class PageCountRepo : IPageCount
+    public class PageCountRepo : IPageCountRepo
     {
         private readonly DatabaseContext _databaseContext;
 
         public PageCountRepo(DatabaseContext databaseContext)
         {
-            databaseContext = _databaseContext;
+            _databaseContext = databaseContext;
         }
 
         public int AddPageCount(PageCount pageCount)
@@ -64,10 +64,5 @@ namespace EfficiencyCalc.Models.Repository
             _databaseContext.SaveChanges();
 
         }
-
-
-
-
-
     }
 }

@@ -9,6 +9,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using EfficiencyCalc.DAL;
 using Microsoft.EntityFrameworkCore;
+using EfficiencyCalc.Interfaces;
+using EfficiencyCalc.Models.Repository;
 
 namespace EfficiencyCalc
 {
@@ -29,6 +31,8 @@ namespace EfficiencyCalc
             var dbConnectionString = @"Server=localhost\SQLEXPRESS;Database=EfficiencyCalc;Trusted_Connection=True;";
 
             services.AddDbContext<DatabaseContext>(options => options.UseSqlServer(dbConnectionString));
+
+            services.AddScoped<IPageCountRepo, PageCountRepo>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

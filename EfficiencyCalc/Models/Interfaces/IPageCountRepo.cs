@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace EfficiencyCalc.Interfaces
 {
-    public interface IPageCount
+    public interface IPageCountRepo
     {
         PageCount GetPageCount(int Id);
         List<PageCount> GetPageCounts();
