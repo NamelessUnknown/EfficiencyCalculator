@@ -3,7 +3,7 @@ import { Observable } from 'rxjs';
 import { PageCount } from '../model/PageCount';
 
 @Injectable()
-export abstract class PropertiesBackendService {
+export abstract class PageCountBackendService {
     abstract addPageCount(newPageCount: PageCount): Observable<number>;
 
     abstract getPageCount(id: number): Observable<PageCount>;

@@ -1,0 +1,40 @@
+﻿<div>
+    <div>
+        <h3>{{pageTitle}}</h3>
+    </div>
+</div>
+<div style="margin-top:15px; margin-right: 25px" class="content-table">
+    <table class="table client table-responsive">
+        <thead>
+            <tr>
+                <th class="col-md-1 col-sm-1 col-xs-1">Lp.</th>
+                <th class="col-md-2 col-sm-2 col-xs-2">Operator</th>
+                <th class="col-md-2 col-sm-2 col-xs-2">Department</th>
+                <th class="col-md-2 col-sm-2 col-xs-2">Shift</th>
+                <th class="col-md-2 col-sm-2 col-xs-2">Inspected Pages</th>
+                <th class="col-md-2 col-sm-2 col-xs-2">Associations</th>
+                <th class="col-md-2 col-sm-2 col-xs-2">Ads</th>
+                <th class="col-md-2 col-sm-2 col-xs-2">Ads - Time</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let pagecount of manyPageCounts let i = index" [attr.data-index]="i">
+                <td class="col-md-1 col-sm-1 col-xs-1">{{i+1}}</td>
+                <td class="col-md-2 col-sm-2 col-xs-2">{{pagecount.worker}}</td>
+                <td class="col-md-2 col-sm-2 col-xs-2">{{pagecount.department===0? "Supplied":(pagecount.department===1? "Plus":"Retail")}}</td>
+                <td class="col-md-2 col-sm-2 col-xs-2">{{pagecount.shift===0? "Morning" :(pagecount.shift===1? "Afternoon":"Night")}}</td>
+                <td class="col-md-2 col-sm-2 col-xs-2">{{pagecount.inspectedPages}}</td>
+                <td class="col-md-2 col-sm-2 col-xs-2">{{pagecount.associations}}</td>
+                <td class="col-md-2 col-sm-2 col-xs-2">{{pagecount.ads}}</td>
+                <td class="col-md-2 col-sm-2 col-xs-2">{{pagecount.timeSpentOnAds}}</td>
+
+                <td class="col-md-1 col-sm-1 col-xs-1"><button class="btn btn-primary" (click)="getPageCount(pageCount.Id)">Details</button></td>
+                <td class="col-md-1 col-sm-1 col-xs-1"><button class="btn btn-success" (click)="updatePageCount(pageCount.Id)">Update</button></td>
+                <td class="col-md-1 col-sm-1 col-xs-1"><button class="btn btn-danger" (click)="deletePageCount(pageCount.Id)">Delete</button></td>
+            </tr>
+            <tr *ngIf="manyPageCounts.length == 0">
+                <td style="text-align: center" colspan="8">{{tempInfo}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

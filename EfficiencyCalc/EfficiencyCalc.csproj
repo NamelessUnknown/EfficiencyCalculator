@@ -22,15 +22,19 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Remove="ClientApp\model\PageCount.ts" />
-    <None Remove="ClientApp\services\http-pagecount-backend.service.ts" />
-    <None Remove="ClientApp\services\pagecount-backend.service.ts" />
+    <None Remove="ClientApp\app\components\pagecount\pagecount-details.component.ts" />
+    <None Remove="ClientApp\app\components\pagecount\pagecount.component.ts" />
+    <None Remove="ClientApp\app\model\PageCount.ts" />
+    <None Remove="ClientApp\app\services\http-pagecount-backend.service.ts" />
+    <None Remove="ClientApp\app\services\pagecount-backend.service.ts" />
   </ItemGroup>
 
   <ItemGroup>
-    <TypeScriptCompile Include="ClientApp\model\PageCount.ts" />
-    <TypeScriptCompile Include="ClientApp\services\http-pagecount-backend.service.ts" />
-    <TypeScriptCompile Include="ClientApp\services\pagecount-backend.service.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\pagecount\pagecount-details.component.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\pagecount\pagecount.component.ts" />
+    <TypeScriptCompile Include="ClientApp\app\model\pagecount.ts" />
+    <TypeScriptCompile Include="ClientApp\app\services\http-pagecount-backend.service.ts" />
+    <TypeScriptCompile Include="ClientApp\app\services\pagecount-backend.service.ts" />
   </ItemGroup>
 
   <Target Name="DebugRunWebpack" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('wwwroot\dist') ">

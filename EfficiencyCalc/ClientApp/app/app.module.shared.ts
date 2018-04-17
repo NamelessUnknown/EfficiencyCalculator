@@ -10,13 +10,21 @@ import { HomeComponent } from './components/home/home.component';
 import { FetchDataComponent } from './components/fetchdata/fetchdata.component';
 import { CounterComponent } from './components/counter/counter.component';
 
+import { PageCountComponent } from './components/pagecount/pagecount.component';
+import { PageCountService } from './components/pagecount/services/pagecount.service';
+import { PageCountBackendService } from './services/pagecount-backend.service';
+import { HttpPageCountBackendService } from './services/http-pagecount-backend.service';
+import { PageCountDetailsComponent } from './components/pagecount/pagecount-details.component';
+
 @NgModule({
     declarations: [
         AppComponent,
         NavMenuComponent,
         CounterComponent,
         FetchDataComponent,
-        HomeComponent
+        HomeComponent,
+        PageCountComponent,
+        PageCountDetailsComponent
     ],
     imports: [
         CommonModule,
@@ -27,8 +35,17 @@ import { CounterComponent } from './components/counter/counter.component';
             { path: 'home', component: HomeComponent },
             { path: 'counter', component: CounterComponent },
             { path: 'fetch-data', component: FetchDataComponent },
-            { path: '**', redirectTo: 'home' }
+            { path: 'pagecount', component: PageCountComponent },
+            { path: 'pagecount/new-pagecount', component: PageCountDetailsComponent },
+            { path: 'pagecount/pagecount-details/:id', component: PageCountDetailsComponent },
+            { path: 'pagecount/update-details/:id', component: PageCountDetailsComponent },
+            { path: '**', redirectTo: 'home' },
+            
         ])
+    ],
+    providers: [
+        PageCountService,
+        { provide: PageCountBackendService, useClass: HttpPageCountBackendService }
     ]
 })
 export class AppModuleShared {
